@@ -17,10 +17,10 @@ public class Coche {
 
         }
 
-        public int CalcularEdadDelCoche(int añoActual)
+        public void CalcularEdadDelCoche()
         {
             int añoA=2024;
             int edad=añoA-año;
             System.out.println("Este carro tiene: "+edad+" años.");
-        }return edad;
+        }
 }

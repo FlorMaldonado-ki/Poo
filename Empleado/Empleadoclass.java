@@ -7,19 +7,22 @@ public class Empleado {
         this.bonificacion = bonificacion;
         this.horasExtra = horasExtra;
     }
-        public double CalcularSalario(double SueldoBase){
+
+
+        public Double CalcularSalario(Double SueldoBase){
 
             return this.SueldoBase;
 
         }
-        public double CalcularSalario (double SueldoBase, double bonificacion){
+        public Double CalcularSalario (Double SueldoBase, Double bonificacion){
 
             sueldo=SueldoBase+bonificacion;
             return sueldo;
         }
 
-        public double CalcularSalario (double SueldoBase, double bonificacion, double horasExtra) {
+        public Double CalcularSalario (Double SueldoBase, Double bonificacion, Double horasExtra) {
 
+            horasExtra=horasExtra*20;
             sueldo = SueldoBase + bonificacion + horasExtra;
             return sueldo;
         }

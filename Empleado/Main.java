@@ -5,9 +5,9 @@ public class Main {
             Scanner leer= new Scanner(System.in);
         double SueldoBase, bonificacion=0, horasExtra=0;
 
-        System.out.print("Ingresar Sueldo Base: ");
+        ystem.out.print("Ingresar Sueldo Base: ");
         SueldoBase= leer.nextDouble();
-        System.out.println("¿Desea ingresar datos extra?");
+        System.out.println("¿Desea ingresar bonificaciones?");
         System.out.println("1. Si - 2. No");
         res= leer.nextInt();
 
@@ -16,7 +16,7 @@ public class Main {
             bonificacion = leer.nextDouble();
 
         }
-        System.out.println("¿Desea ingresar datos extra?");
+        System.out.println("¿Desea ingresar horas extra?");
         System.out.println("1. Si - 2. No");
         res= leer.nextInt();
 
@@ -30,6 +30,3 @@ public class Main {
 
         sueldo=empleado.CalcularSalario(SueldoBase, bonificacion, horasExtra);
         System.out.println("El sueldo total es de: "+ sueldo);
-
-    }
-}

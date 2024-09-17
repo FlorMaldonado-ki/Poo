@@ -1,3 +1,4 @@
+
 public class Producto {
 
     private String nombre;
@@ -14,7 +15,6 @@ public class Producto {
         this.nombre = nombre;
         this.precio = precio;
         this.stock = 0;
-
     }
 
     public String getnombre() {
@@ -58,11 +58,8 @@ public class Producto {
 
     public void MostrarProducto() {
 
-            System.out.println("Nombre del producto: " + this.nombre);
-            System.out.println("Precio: " + this.precio);
-            System.out.println("Stock actual: " + this.stock);
+            System.out.println("Nombre del producto: " + getnombre());
+            System.out.println("Precio: " + getprecio());
+            System.out.println("Stock actual: " + getstock());
         }
 }
-
-
-

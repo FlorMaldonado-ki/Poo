@@ -21,18 +21,17 @@ public class Stock {
         }
         else{
 
+            i=1;
+
                 for (Producto producto : this.listaProductos) {
                     System.out.println("-----------------------");
                     System.out.println("Este es el producto: " + i);
                     producto.MostrarProducto();
                     i++;
-
             }
         }
 
     }
-
-
-
+    
 }
 

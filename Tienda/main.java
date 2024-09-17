@@ -10,7 +10,7 @@ public class Main {
         double precio;
         int stock, res=0, cantidad=0, i, op;
         Stock stockc = new Stock();
-        Producto producto=new Producto();
+        Producto producto=new Producto("",0,0);
 
         while(res!=4) {
 
@@ -85,10 +85,9 @@ public class Main {
                         stockc.MostrarProductos();
                         break;
                     default:
-                        System.out.println("Opción inválida.");
+                        System.out.println("¡Lindo día!");
                 }
         }
-        System.out.println("¡Lindo día!");
 
     }
 

@@ -8,9 +8,9 @@ public class Main {
 
         String nombre;
         double precio;
-        int stock, res=0, cantidad=0, i, op;
+        int stock, res=0, cantidad=0, id, idModificador, op;
         Stock stockc = new Stock();
-        Producto producto=new Producto("",0,0);
+
 
         while(res!=4) {
 
@@ -21,6 +21,7 @@ public class Main {
             System.out.println("3. Ver lista de productos.");
             System.out.println("4. Salir.");
             res = leer.nextInt();
+            Producto producto=new Producto("",0,0);
 
                 switch (res) {
 
@@ -47,6 +48,7 @@ public class Main {
                         producto.setstock(stock);
                         producto.setnombre(nombre);
                         producto.setprecio(precio);
+                        producto.setid(id=rand.nextInt(1, 10001));
 
                         stockc.RegistrarProducto(producto);
                         System.out.println("Se ha registrado el producto correctamente");
@@ -59,20 +61,20 @@ public class Main {
                         switch(op) {
                             case 1:
                                 System.out.println("-------------------");
-                                System.out.print("Ingrese el número del producto al que requiere aumentar el stock: ");
-                                i = leer.nextInt();
-                                System.out.print("Ingrese el nuevo stock del producto: ");
+                                System.out.print("Ingrese el ID del producto al que requiere aumentar el stock: ");
+                                idModificador = leer.nextInt();
+                                System.out.print("Ingrese el la cantidad a agregar al stock del producto: ");
                                 cantidad = leer.nextInt();
-                                producto.AumentarStock(cantidad, i);
+                                producto.AumentarStock(producto, cantidad, idModificador);
                                 break;
 
                             case 2:
                                 System.out.println("---------------------");
-                                System.out.print("Ingrese el número del producto al que requiere reducir el stock: ");
-                                i = leer.nextInt();
-                                System.out.print("Ingrese la nueva cantidad del stock:");
+                                System.out.print("Ingrese el ID del producto al que requiere reducir el stock: ");
+                                id = leer.nextInt();
+                                System.out.print("Ingrese la cantidad a reducir del stock:");
                                 cantidad = leer.nextInt();
-                                producto.ReducirStock(cantidad, i);
+                                producto.ReducirStock(cantidad, id);
                                 stockc.MostrarProductos();
                                 break;
 

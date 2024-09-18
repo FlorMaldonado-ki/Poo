@@ -5,10 +5,6 @@ public class Stock {
     int i=1;
     ArrayList<Producto> listaProductos=new ArrayList<Producto>();
 
-    String nombre;
-    double precio;
-    int stock;
-
     public void RegistrarProducto(Producto producto) {
         this.listaProductos.add(producto);
     }
@@ -32,6 +28,5 @@ public class Stock {
         }
 
     }
-    
-}
 
+}

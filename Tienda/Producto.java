@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 
 public class Producto {
 
     private String nombre;
     private double precio;
-    private int stock=0;
+    private int stock=0, id, idModificador;
+
+    ArrayList<Producto>listaProductos=new ArrayList<>(Producto);
 
     public Producto(String nombre, double precio, int stock) {
         this.nombre = nombre;
@@ -35,21 +38,37 @@ public class Producto {
     public void setstock(int stock) {
         this.stock = stock;
     }
-    public void AumentarStock(int cantidad, int i) {
+    public int getid() {
+        return id;
+    }
+    public void setid(int id) {
+        this.id = id;
+    }
+    public void AumentarStock(Producto producto, int cantidad, int idModificador) {
 
-        if (cantidad > 0) {
-            this.stock = cantidad;
-            System.out.println("Se ha modificado el stock del producto " + i);
+        if (cantidad > 0 && this.stock + cantidad> this.stock) {
+
+            if(this.listaProductos(producto).getid() == idModificador){
+                setstock(cantidad + this.stock);
+                System.out.println("Se ha modificado el stock del producto que tiene el ID: " + id);
+                System.out.println("El nuevo stock del producto es " + getstock());
+            }
+            else{
+                System.out.println("No hay un producto con esa ID");
+            }
         }
         else {
             System.out.println("El stock no puede ser negativo");
         }
     }
-    public void ReducirStock(int cantidad, int i) {
 
-        if (cantidad > 0 && cantidad > this.stock) {
-            this.stock = cantidad;
-            System.out.println("Se ha modificado el stock del producto " + i);
+    public void ReducirStock(int cantidad, int id) {
+
+        if (cantidad > 0 && this.stock - cantidad < this.stock) {
+
+            setstock(this.stock-cantidad);
+            System.out.println("Se ha modificado el stock del producto " + id);
+            System.out.println("El nuevo stock del producto "+ getnombre() + " es " + getstock());
         }
         else {
             System.out.println("El stock no puede ser negativo y tiene que ser mayor que el stock ya registrado");
@@ -58,6 +77,7 @@ public class Producto {
 
     public void MostrarProducto() {
 
+            System.out.println("ID: " + getid());
             System.out.println("Nombre del producto: " + getnombre());
             System.out.println("Precio: " + getprecio());
             System.out.println("Stock actual: " + getstock());

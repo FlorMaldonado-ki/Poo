@@ -48,7 +48,7 @@ public class Producto {
 
         if (cantidad > 0 && this.stock + cantidad> this.stock) {
 
-            if(this.listaProductos(producto).getid() == idModificador){
+            if(this.listaProductos(producto) -> getid() == idModificador){
                 setstock(cantidad + this.stock);
                 System.out.println("Se ha modificado el stock del producto que tiene el ID: " + id);
                 System.out.println("El nuevo stock del producto es " + getstock());

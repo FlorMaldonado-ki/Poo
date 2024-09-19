@@ -5,7 +5,12 @@ public class Inventario {
     public ArrayList<categoria> listaCategoria = new ArrayList<categoria>();
 
     public void registrarProducto(Producto producto) {
-        this.listaProductos.add(producto);
+        for (categoria Categoria : this.listaCategoria) {
+            if (Categoria.id == producto.IDcategoria) {
+                Categoria.listaProductos.add(producto);
+                break;
+            }
+        }
     }
 
     public void eliminarProducto(int idProductoEliminar) {
@@ -41,10 +46,39 @@ public class Inventario {
         }
     }
 
+    public void MostrarDatosSimple(){
+
+        if (this.listaCategoria.isEmpty()){
+            System.out.println("No hay productos en el sistema :(");
+            return;
+        }
+        int i=1;
+        for (categoria Categoria: listaCategoria) {
+
+            System.out.println("");
+            System.out.println("Clase número: "+ i);
+            Categoria.MostrarCategoria();
+            i++;
+        }
+    }
+
+    public void MostrarDatosCompleto(){
+
+        if (this.listaCategoria.isEmpty()){
+            System.out.println("No hay productos en el sistema :(");
+            return;
+        }
+
+        for(categoria Categoria: listaCategoria){
+
+            Categoria.MostrarCategoriaCompleto();
+
+        }
+    }
     public boolean validarExistenciaDeCategorias(){
 
         return this.listaCategoria.size() > 0;
     }
 
-
 }
+

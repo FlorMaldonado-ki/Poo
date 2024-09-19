@@ -1,3 +1,5 @@
+import jdk.jfr.Category;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -9,14 +11,15 @@ public class Main {
 
         int opcion = 0;
 
-        while (opcion != 6) {
+        while (opcion != 7) {
             System.out.println("\n*** BIEVENIDO ***");
             System.out.println("1. Registrar producto");
             System.out.println("2. Eliminar producto");
             System.out.println("3. Mostrar productos");
             System.out.println("4. Mostrar categorías");
-            System.out.println("5. Registrar categoría");
-            System.out.println("6. Salir");
+            System.out.println("5. Mostrar categorías con sus productos");
+            System.out.println("6. Registrar categoría");
+            System.out.println("7. Salir");
 
             System.out.println("Selecciona una opción: ");
             opcion = scanner.nextInt();
@@ -75,9 +78,12 @@ public class Main {
                     inventario.mostrarProductos();
                     break;
                 case 4:
-                    Categoria.MostrarDatosSimple();
+                    inventario.MostrarDatosSimple();
                     break;
                 case 5:
+                    inventario.MostrarDatosCompleto();
+                    break;
+                case 6:
                     System.out.println("");
                     System.out.println("Seleccionaste la opción para registrar una categoria");
 
@@ -85,14 +91,11 @@ public class Main {
                     String nombreCategoria = scanner.nextLine();
 
                     Categoria.setnombreCategoria(nombreCategoria);
-                    Categoria.registrarProductoCategoria(Categoria);
-
+                    inventario.registrarCategoria(Categoria);
                     System.out.println("Categoría registrada correctamente");
-
-                    System.out.println("--------PRUEBA----------");
                     break;
 
-                case 6:
+                case 7:
                     System.out.println("Hasta luego");
                     return;
             }

@@ -8,7 +8,7 @@ public class Main {
 
         String nombre;
         double precio;
-        int stock, res=0, cantidad=0, id, idModificador, op;
+        int stock, res=0, cantidad=0, cantidadR, i, op;
         Stock stockc = new Stock();
 
 
@@ -23,6 +23,8 @@ public class Main {
             res = leer.nextInt();
             Producto producto=new Producto("",0,0);
 
+            leer.nextLine();
+
                 switch (res) {
 
                     case 1:
@@ -35,12 +37,15 @@ public class Main {
                         }
                         System.out.print("Ingrese el precio del producto: ");
                         precio = leer.nextDouble();
+                        leer.nextLine();
                         if(precio<0){
                             System.out.println("El precio no puede ser negativo");
                             break;
                         }
                         System.out.print("Ingrese el stock del producto: ");
                         stock = leer.nextInt();
+                        producto.setstock(stock);
+                        leer.nextLine();
                         if(stock<0){
                             System.out.println("El stock no puede ser negativo");
                             break;
@@ -48,7 +53,6 @@ public class Main {
                         producto.setstock(stock);
                         producto.setnombre(nombre);
                         producto.setprecio(precio);
-                        producto.setid(id=rand.nextInt(1, 10001));
 
                         stockc.RegistrarProducto(producto);
                         System.out.println("Se ha registrado el producto correctamente");
@@ -58,24 +62,27 @@ public class Main {
                         System.out.println("1. Aumentar el stock.");
                         System.out.println("2. Reducir el stock.");
                         op=leer.nextInt();
+                        leer.nextLine();
                         switch(op) {
                             case 1:
                                 System.out.println("-------------------");
-                                System.out.print("Ingrese el ID del producto al que requiere aumentar el stock: ");
-                                idModificador = leer.nextInt();
-                                System.out.print("Ingrese el la cantidad a agregar al stock del producto: ");
+                                System.out.print("Ingrese el nombre del producto al que requiere aumentar el stock: ");
+                                nombre= leer.next();
+                                leer.nextLine();
+                                System.out.print("Ingrese la cantidad a agregar al stock del producto: ");
                                 cantidad = leer.nextInt();
-                                producto.AumentarStock(producto, cantidad, idModificador);
+                                leer.nextLine();
+                                stockc.AumentarStock(cantidad, nombre);
                                 break;
 
                             case 2:
                                 System.out.println("---------------------");
-                                System.out.print("Ingrese el ID del producto al que requiere reducir el stock: ");
-                                id = leer.nextInt();
-                                System.out.print("Ingrese la cantidad a reducir del stock:");
-                                cantidad = leer.nextInt();
-                                producto.ReducirStock(cantidad, id);
-                                stockc.MostrarProductos();
+                                System.out.print("Ingrese el nombre del producto al que requiere reducir el stock: ");
+                                nombre= leer.next();
+                                System.out.print("Ingrese la cantidad a reducir del stock del producto:");
+                                cantidadR = leer.nextInt();
+                                leer.nextLine();
+                                stockc.ReducirStock(cantidadR, nombre);
                                 break;
 
                             default:
@@ -90,7 +97,5 @@ public class Main {
                         System.out.println("¡Lindo día!");
                 }
         }
-
     }
-
 }

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Medico {
 
-        public int id;
+        public String id;
         public String nombre;
         public String apellidos;
         public String fechaNacimiento;
@@ -12,8 +12,8 @@ public class Medico {
         private String rfc;
         Random rand = new Random();
 
-        public Medico(String nombre, String apellidos, String fechaNacimiento, String telefono, String rfc) {
-            this.id =rand.nextInt();
+        public Medico(String id, String nombre, String apellidos, String fechaNacimiento, String telefono, String rfc) {
+            this.id=id;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.fechaNacimiento = fechaNacimiento;
@@ -22,11 +22,11 @@ public class Medico {
 
         }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -69,8 +69,9 @@ public class Medico {
     public void setRfc(String rfc) {
         this.rfc = rfc;
     }
-    public void MostrarMedico(){
+    public void mostrarMedico(){
 
+        System.out.println("\nID: "+ getId());
         System.out.println("Nombre: "+ getNombre());
         System.out.println("Apellidos: "+ getApellidos());
         System.out.println("FechaNacimiento: "+ getFechaNacimiento());

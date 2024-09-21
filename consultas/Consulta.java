@@ -4,8 +4,6 @@ import consultorios.Consultorio;
 import medicos.Medico;
 import pacientes.Paciente;
 
-import java.security.PublicKey;
-
 public class Consulta {
 
     public int id;

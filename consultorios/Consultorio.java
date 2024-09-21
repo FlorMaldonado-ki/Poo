@@ -1,28 +1,27 @@
 package consultorios;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Consultorio {
 
-    public int id;
+    public String id;
     public int piso;
     public int numeroConsultorio;
     Random ran=new Random();
 
 
-    public Consultorio(int piso, int numeroConsultorio) {
-        this.id = ran.nextInt(1, 10001);
+    public Consultorio(String id, int piso, int numeroConsultorio) {
+        this.id = id;
         this.piso = piso;
         this.numeroConsultorio = numeroConsultorio;
 
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -42,11 +41,10 @@ public class Consultorio {
         this.numeroConsultorio = numeroConsultorio;
     }
 
-    public void MostrarConsultorio(){
+    public void mostrarConsultorio(){
 
-        System.out.println("Id: "+ getId());
+        System.out.println("\nId: "+ getId());
         System.out.println("Piso: "+ getPiso());
         System.out.println("Numero Consultorio: "+ getNumeroConsultorio());
     }
 }
-

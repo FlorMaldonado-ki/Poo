@@ -54,4 +54,13 @@ public class ValidadorHospital {
         }
         return true;
     }
+    public boolean validarRFC(String RFC, ArrayList<Medico> listaMedicos) {
+
+        for (Medico medico : listaMedicos) {
+
+            if (medico.getRfc().equals(RFC)) return false;
+
+        }
+        return true;
+    }
 }

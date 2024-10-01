@@ -116,6 +116,17 @@ public class Main {
                     System.out.print("Ingresar RFC: ");
                     rfc=leer.next();
 
+                    while(hospital.validarRFCMedico(rfc)){
+
+                        if(hospital.validarRFCMedico(rfc)){
+                            System.out.println("Este RFC ya existe. Por favor ingresa uno diferente.");
+                            System.out.print("Ingresar RFC: ");
+                            rfc = leer.next();
+
+                            hospital.validarRFCMedico(rfc);
+                        }
+                    }
+
                     Medico medico=new Medico(id, nombre, apellidos, fechaNacimientoMedico, telefono, rfc);
                     medico.setNombre(nombre);
                     medico.setApellidos(apellidos);

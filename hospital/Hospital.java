@@ -52,6 +52,11 @@ public class Hospital {
         if (validador.validarTelefono(telefonoDeseado, this.listaPacientes)) return false;
         return true;
     }
+    public boolean validarRFCMedico(String Rfc){
+        if (validador.validarRFC(Rfc, this.listaMedicos)) return false;
+        return true;
+    }
+
     public void registrarConsultorio(Consultorio consultorio) {
         this.listaConsultorio.add(consultorio);
     }
@@ -203,5 +208,4 @@ public class Hospital {
         return this.validador.validarFechaCorrecta(fechaDeseada);
 
     }
-
 }

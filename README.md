@@ -4,7 +4,7 @@
 
 Duque Montúfar Jesús Adrián 
 Maldonado Ramírez Flor de María
-Amet
+Amet Pérez Acosta
 
 Segundo Semestre
 
